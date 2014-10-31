@@ -1,3 +1,6 @@
+set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--no-as-needed")
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,--no-as-needed")
+
 ADD_EXECUTABLE(flag_test flag_test.cpp)
 TARGET_LINK_LIBRARIES(flag_test gflags glog)
 SET_TARGET_PROPERTIES(flag_test PROPERTIES COMPILE_FLAGS ${OS_COMPILE_FLAGS})

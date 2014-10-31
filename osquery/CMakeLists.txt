@@ -6,6 +6,9 @@ SET(OSQUERY_LIBS
   ssl
 )
 
+set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--no-as-needed")
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,--no-as-needed")
+
 if(APPLE)
   list(APPEND OSQUERY_LIBS "boost_thread-mt")
   list(APPEND OSQUERY_LIBS "boost_system")
