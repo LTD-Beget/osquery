@@ -1,0 +1,7 @@
+table_name("blockdevs")
+schema([
+	Column(name="name", type="std::string"),
+	Column(name="parent", type="std::string"),
+	Column(name="size", type="long long int"),
+])
+implementation("blockdevs@genBlockDevs")

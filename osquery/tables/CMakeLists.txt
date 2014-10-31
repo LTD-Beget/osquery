@@ -37,6 +37,7 @@ else()
     system/linux/processes.cpp
     system/linux/users.cpp
     system/linux/groups.cpp
+    system/linux/blockdevs.cpp
   )
 endif()
 
