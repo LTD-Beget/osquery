@@ -12,5 +12,7 @@ schema([
     Column(name="system_time", type="std::string"),
     Column(name="start_time", type="std::string"),
     Column(name="parent", type="int"),
+    Column(name="euid", type="long long int"),
+    Column(name="egid", type="long long int"),
 ])
 implementation("system/processes@genProcesses")

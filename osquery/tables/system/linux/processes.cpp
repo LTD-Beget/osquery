@@ -139,6 +139,8 @@ QueryData genProcesses() {
     r["system_time"] = boost::lexical_cast<std::string>(proc_info->stime);
     r["start_time"] = boost::lexical_cast<std::string>(proc_info->start_time);
     r["parent"] = boost::lexical_cast<std::string>(proc_info->ppid);
+    r["euid"] = boost::lexical_cast<std::string>((unsigned int)proc_info->euid);
+    r["egid"] = boost::lexical_cast<std::string>((unsigned int)proc_info->egid);
 
     results.push_back(r);
     standard_freeproc(proc_info);
