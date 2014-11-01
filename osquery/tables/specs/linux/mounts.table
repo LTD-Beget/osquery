@@ -1,0 +1,10 @@
+table_name("mounts")
+schema([
+	Column(name="fsname", type="std::string"),
+	Column(name="dir", type="std::string"),
+	Column(name="type", type="std::string"),
+	Column(name="opts", type="std::string"),
+	Column(name="freq", type="int"),
+	Column(name="passno", type="int"),
+])
+implementation("mounts@genMounts")
