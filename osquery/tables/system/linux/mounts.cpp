@@ -13,12 +13,14 @@ QueryData genMounts() {
 	QueryData results;
 	FILE *mounts;
 	struct mntent *ent;
+	char real_path[PATH_MAX];
 
 	if (mounts = setmntent("/proc/mounts", "r")) {
 		while (ent = getmntent(mounts)) {
 			Row r;
 
 			r["fsname"] = std::string(ent->mnt_fsname);
+			r["fsname_real"] = std::string(realpath(ent->mnt_fsname, real_path) ? real_path : ent->mnt_fsname);
 			r["dir"] = std::string(ent->mnt_dir);
 			r["type"] = std::string(ent->mnt_type);
 			r["opts"] = std::string(ent->mnt_opts);
